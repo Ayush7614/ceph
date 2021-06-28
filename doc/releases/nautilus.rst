@@ -28,7 +28,8 @@ Notable Changes
 * The trimming logic in the monitor has been made dynamic, with the
   introduction of ``paxos_service_trim_max_multiplier``, a factor by which
   ``paxos_service_trim_max`` is multiplied to make trimming faster,
-  when required. Setting it to 0 disables it and reverts to old behavior.
+  when required. Setting it to 0 disables the upper bound check for trimming
+  and makes the monitors trim at the maximum rate.
 
 * A ``--max <n>`` option is available with the ``osd ok-to-stop`` command to
   provide up to N OSDs that can be stopped together without making PGs
